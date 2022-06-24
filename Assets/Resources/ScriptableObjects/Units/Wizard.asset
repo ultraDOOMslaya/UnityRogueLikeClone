@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d91b49be5d04f54fbfe7daa27632359, type: 3}
+  m_Name: Wizard
+  m_EditorClassIdentifier: 
+  code: wizard
+  unitName: Wizard
+  healthpoints: 50
+  attackRange: 2
+  fieldOfView: 22
+  attackDamage: 2
+  attackRate: 1
+  prefab: {fileID: 5899388434104923003, guid: 297385c8ac8b61243be8ebe1286f3946, type: 3}
+  cost: []
+  skills: []

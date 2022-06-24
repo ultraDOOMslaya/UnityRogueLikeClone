@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3932e6caa066b64ebe0a96f1c5e6916, type: 3}
+  m_Name: Hovel
+  m_EditorClassIdentifier: 
+  code: hovel
+  unitName: Hovel
+  healthpoints: 100
+  attackRange: 0
+  fieldOfView: 0
+  attackDamage: 0
+  attackRate: 0
+  prefab: {fileID: 1701558036112885505, guid: 969c65365226d30439bb257120821e1c, type: 3}
+  cost: []
+  skills:
+  - {fileID: 11400000, guid: 3dd3e0028e958fd42b50c45cc3c4a528, type: 2}
+  - {fileID: 11400000, guid: bf6d6a0b8c4921a4985f28513ac4d1d1, type: 2}
+  - {fileID: 11400000, guid: caa7277a3514746438cfc014675e4a9d, type: 2}

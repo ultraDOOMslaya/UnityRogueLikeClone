@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e379709011b53424c947eaceb19b43fb, type: 3}
+  m_Name: Global Parameters
+  m_EditorClassIdentifier: 
+  _fieldsToShowInGame: []
+  enableDayAndNightCycle: 0
+  dayLengthInSeconds: 0
+  dayInitialRatio: 0
+  initialBuilding: {fileID: 11400000, guid: 074c9a0e7d4d74240ac6d57eda4e5705, type: 2}
+  experienceEvolutionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  productionMultiplierCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackDamageMultiplierCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackRangeMultiplierCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  onLevelUpSound: {fileID: 0}
+  baseGoldProduction: 0
+  bonusGoldProductionPerBuilding: 0
+  goldBonusRange: 0
+  woodProductionRange: 0
+  stoneProductionRange: 0
+  enableFOV: 0
