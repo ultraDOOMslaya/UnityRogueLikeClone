@@ -6,6 +6,9 @@ using BehaviorTree;
 
 public class CheckEnemyInFOVRange : Node
 {
+    private const float _samplingRange = 48f; //increments of 12
+    private const float _samplingRadius = 7.2f; //increments of 1.8
+
     UnitManager _manager;
     float _fovRadius;
     int _unitOwner;
@@ -39,10 +42,27 @@ public class CheckEnemyInFOVRange : Node
                     .First()
                     .transform
             );
+            List<Vector2> targetOffsets = _ComputeFormationTargetOffsets();
+            EventManager.TriggerEvent("TargetFormationOffsets", targetOffsets);
             _state = NodeState.SUCCESS;
             return _state;
         }
         _state = NodeState.FAILURE;
         return _state;
+    }
+
+    private List<Vector2> _ComputeFormationTargetOffsets()
+    {
+        int nSelectedUnits = Globals.SELECTED_UNITS.Count;
+        List<Vector2> offsets = new List<Vector2>(nSelectedUnits);
+        // leader unit goes to the exact target point
+        offsets.Add(Vector2.zero);
+        if (nSelectedUnits == 1) // (abort early if no other unit is selected)
+            return offsets;
+
+        // next units have offsets computed with a Poisson disc sampling
+        offsets.AddRange(Utils.SampleOffsets(
+            nSelectedUnits - 1, _samplingRadius, _samplingRange * Vector2.one));
+        return offsets;
     }
 }

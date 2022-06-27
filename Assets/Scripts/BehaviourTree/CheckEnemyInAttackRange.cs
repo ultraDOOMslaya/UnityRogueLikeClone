@@ -34,12 +34,13 @@ public class CheckEnemyInAttackRange : Node
         }
 
         //TODO: scale is multipled by 5
-        Vector3 s = target.Find("Mesh").localScale / 10;
-        float targetSize = Mathf.Max(s.x, s.z);
+        //Vector3 s = target.Find("Mesh").localScale / 10;
+        //float targetSize = Mathf.Max(s.x, s.z);
 
         float distance = Vector3.Distance(_manager.transform.position, target.position);
-        bool isInRange = (distance - targetSize) <= _attackRange;
-        //bool isInRange = distance <= _attackRange;
+        //TODO: Different sets of mesh have different scales which makes these calculations difficult
+        //bool isInRange = (distance - targetSize) <= _attackRange;
+        bool isInRange = distance <= _attackRange;
         _state = isInRange ? NodeState.SUCCESS : NodeState.FAILURE;
         return _state;
     }
