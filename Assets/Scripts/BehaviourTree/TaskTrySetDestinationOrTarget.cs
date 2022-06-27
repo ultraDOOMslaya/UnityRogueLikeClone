@@ -54,7 +54,7 @@ public class TaskTrySetDestinationOrTarget : Node
         return _state;
     }
 
-    private List<Vector2> _ComputeFormationTargetOffsets()
+    public List<Vector2> _ComputeFormationTargetOffsets()
     {
         int nSelectedUnits = Globals.SELECTED_UNITS.Count;
         List<Vector2> offsets = new List<Vector2>(nSelectedUnits);
