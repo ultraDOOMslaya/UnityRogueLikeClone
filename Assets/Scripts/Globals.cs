@@ -34,6 +34,7 @@ public class Globals
     };
 
     public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
+    public static List<HarvestResourceManager> SELECTED_RESOURCES = new List<HarvestResourceManager>();
 
     public static void UpdateNavMeshSurface()
     {

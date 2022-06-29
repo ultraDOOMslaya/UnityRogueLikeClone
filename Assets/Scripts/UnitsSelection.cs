@@ -31,7 +31,7 @@ public class UnitsSelection : MonoBehaviour
         if (_isDraggingMouseBox && _dragStartPosition != Input.mousePosition)
             _SelectUnitsInDraggingBox();
 
-        if (Globals.SELECTED_UNITS.Count > 0)
+        if (Globals.SELECTED_UNITS.Count > 0 || Globals.SELECTED_RESOURCES.Count > 0)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 _DeselectAllUnits();
@@ -129,6 +129,9 @@ public class UnitsSelection : MonoBehaviour
         List<UnitManager> selectedUnits = new List<UnitManager>(Globals.SELECTED_UNITS);
         foreach (UnitManager um in selectedUnits)
             um.Deselect();
+        List<HarvestResourceManager> selectedResources = new List<HarvestResourceManager>(Globals.SELECTED_RESOURCES);
+        foreach (HarvestResourceManager rm in selectedResources)
+            rm.Deselect();
     }
 
     void OnGUI()

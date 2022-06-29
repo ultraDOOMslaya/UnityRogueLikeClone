@@ -8,7 +8,18 @@ using UnityEngine;
 public class Resource
 {
     public Transform transform;
+
     protected ResourceData _data;
+    protected int _currentYield;
+
+    public Resource(ResourceData data)
+    {
+        _data = data;
+        _currentYield = data.resourceYield;
+    }
+
+    public ResourceData Data { get => _data;  }
+    public int Yield { get => _currentYield; set => _currentYield = value; }
 }
 
 public class ResourcePlacer : MonoBehaviour
