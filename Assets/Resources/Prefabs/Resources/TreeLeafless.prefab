@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33627958677031078}
   - component: {fileID: 23159222240081780}
   - component: {fileID: 64802560808937322}
+  - component: {fileID: 1859659938253919035}
   m_Layer: 8
   m_Name: TreeLeafless
   m_TagString: Resource
@@ -96,3 +97,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e44e1a4a2783d5f41afcd8c670195f85, type: 3}
+--- !u!114 &1859659938253919035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879388732584624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8567f401953404e4d8154d1cc95ddfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionCircle: {fileID: 3071431299765013721, guid: 6e6a97d4e72eec448b290a92a93706cb, type: 3}

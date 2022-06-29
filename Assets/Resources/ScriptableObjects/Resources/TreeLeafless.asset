@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25e09fa24f0d149870c258ca1b3fa4, type: 3}
   m_Name: TreeLeafless
   m_EditorClassIdentifier: 
-  code: 
-  resourceName: 
-  resourceYield: 0
-  prefab: {fileID: 0}
+  code: treeLeafless
+  resourceName: Tree Leafless
+  resourceYield: 28
+  depleted: 0
+  prefab: {fileID: 1879388732584624, guid: ba2b67dbc790eb74f8a401c592dd619f, type: 3}
