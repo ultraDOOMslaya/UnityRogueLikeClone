@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33627958677031078}
   - component: {fileID: 23159222240081780}
   - component: {fileID: 64802560808937322}
-  - component: {fileID: 1859659938253919035}
+  - component: {fileID: -3812648731376480889}
   m_Layer: 8
   m_Name: TreeLeafless
   m_TagString: Resource
@@ -97,7 +97,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e44e1a4a2783d5f41afcd8c670195f85, type: 3}
---- !u!114 &1859659938253919035
+--- !u!114 &-3812648731376480889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

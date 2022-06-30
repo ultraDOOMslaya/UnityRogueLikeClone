@@ -10,6 +10,7 @@ public class Globals
     public static int TERRAIN_LAYER_MASK = 1 << 6;
     public static int UNIT_MASK = 1 << 7;
     public static BuildingData[] BUILDING_DATA;
+    public static ResourceData[] RESOURCE_DATA;
     public static NavMeshSurface NAV_MESH_SURFACE;
     //public static BuildingData[] BUILDING_DATA = new BuildingData[]
     //{
@@ -25,6 +26,7 @@ public class Globals
     //        { "stone", 100 }
     //    })
     //};
+
 
     public static Dictionary<string, GameResource> GAME_RESOURCES = new Dictionary<string, GameResource>()
     {
