@@ -9,6 +9,7 @@ public class HarvestResourceManager : MonoBehaviour
 {
     public GameObject selectionCircle;
 
+
     private bool _hovered = false;
     private Transform _canvas;
     private GameObject _healthbar;
