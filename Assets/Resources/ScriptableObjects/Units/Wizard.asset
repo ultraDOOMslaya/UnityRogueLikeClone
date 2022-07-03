@@ -15,7 +15,7 @@ MonoBehaviour:
   code: wizard
   unitName: Wizard
   healthpoints: 50
-  attackRange: 2
+  attackRange: 10
   fieldOfView: 22
   attackDamage: 2
   attackRate: 1
