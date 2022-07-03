@@ -15,7 +15,7 @@ MonoBehaviour:
   code: soldier
   unitName: Soldier
   healthpoints: 50
-  attackRange: 1
+  attackRange: 6
   fieldOfView: 22
   attackDamage: 2
   attackRate: 1

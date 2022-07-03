@@ -15,7 +15,7 @@ MonoBehaviour:
   code: viking
   unitName: Viking
   healthpoints: 50
-  attackRange: 2
+  attackRange: 6
   fieldOfView: 22
   attackDamage: 2
   attackRate: 1

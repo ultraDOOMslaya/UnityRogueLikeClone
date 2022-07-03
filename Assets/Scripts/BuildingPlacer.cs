@@ -8,6 +8,7 @@ public class BuildingPlacer : MonoBehaviour
     public static BuildingPlacer instance;
     public Building prevPlacedBuilding = null;
     public BuildingData initialBuilding; // <-- temp data
+    public ResourceData initialResource; 
 
     private Building _placedBuilding = null;
     private Ray _ray;
@@ -27,6 +28,10 @@ public class BuildingPlacer : MonoBehaviour
             initialBuilding,
             0,
             new Vector3(100, 0, 200)
+        );
+        SpawnResource(
+            initialResource,
+            new Vector3(50, 0, 150)
         );
     }
 
@@ -155,5 +160,10 @@ public class BuildingPlacer : MonoBehaviour
 
         // restore the previous state
         _placedBuilding = prevPlacedBuilding;
+    }
+    public void SpawnResource(ResourceData data, Vector3 position)
+    {
+        var resource = new Resource(data);
+        resource.SetPosition(position);
     }
 }

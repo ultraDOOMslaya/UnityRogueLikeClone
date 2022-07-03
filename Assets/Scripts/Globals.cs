@@ -10,6 +10,7 @@ public class Globals
     public static int TERRAIN_LAYER_MASK = 1 << 6;
     public static int UNIT_MASK = 1 << 7;
     public static BuildingData[] BUILDING_DATA;
+    public static ResourceData[] RESOURCE_DATA;
     public static NavMeshSurface NAV_MESH_SURFACE;
     //public static BuildingData[] BUILDING_DATA = new BuildingData[]
     //{
@@ -26,6 +27,7 @@ public class Globals
     //    })
     //};
 
+
     public static Dictionary<string, GameResource> GAME_RESOURCES = new Dictionary<string, GameResource>()
     {
         { "gold", new GameResource("Gold", 0) },
@@ -34,6 +36,7 @@ public class Globals
     };
 
     public static List<UnitManager> SELECTED_UNITS = new List<UnitManager>();
+    public static List<HarvestResourceManager> SELECTED_RESOURCES = new List<HarvestResourceManager>();
 
     public static void UpdateNavMeshSurface()
     {
