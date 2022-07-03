@@ -129,11 +129,6 @@ public class BuildingPlacer : MonoBehaviour
         Globals.UpdateNavMeshSurface();
     }
 
-    void PlaceResource()
-    {
-
-    }
-
     public void SelectPlacedBuilding(int buildingDataIndex)
     {
         _PreparePlacedBuilding(buildingDataIndex);
