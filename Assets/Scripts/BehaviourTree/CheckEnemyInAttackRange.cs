@@ -24,6 +24,15 @@ public class CheckEnemyInAttackRange : Node
 
         Transform target = (Transform)currentTarget;
 
+        UnitManager um = target.GetComponent<UnitManager>();
+        if (um == null)
+        {
+            Debug.Log("Target is a resource");
+            //Target is a resource
+            _state = NodeState.FAILURE;
+            return _state;
+        }
+
         // (in case the target object is gone - for example it died
         // and we haven't cleared it from the data yet)
         if (!target)

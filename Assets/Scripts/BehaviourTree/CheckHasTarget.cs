@@ -27,7 +27,7 @@ public class CheckHasTarget : Node
             _state = NodeState.FAILURE;
             return _state;
         }
-
+        
         _state = NodeState.SUCCESS;
         return _state;
     }

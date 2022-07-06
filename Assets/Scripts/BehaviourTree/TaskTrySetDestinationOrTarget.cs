@@ -39,6 +39,23 @@ public class TaskTrySetDestinationOrTarget : Node
                 }
             }
 
+            else if (Physics.Raycast(_ray, out _raycastHit, 1000f, Globals.RESOURCE_MASK))
+            {
+                HarvestResourceManager um = _raycastHit.collider.GetComponent<HarvestResourceManager>();
+                if (um != null)
+                {
+                    // assign the current target transform
+                    Parent.Parent.SetData("currentTarget", _raycastHit.transform);
+                    if (_manager.SelectIndex == 0)
+                    {
+                        List<Vector2> targetOffsets = _ComputeFormationTargetOffsets();
+                        EventManager.TriggerEvent("TargetFormationOffsets", targetOffsets);
+                    }
+                    _state = NodeState.SUCCESS;
+                    return _state;
+                }
+            } 
+
             else if (Physics.Raycast(_ray, out _raycastHit, 1000f, Globals.TERRAIN_LAYER_MASK))
             {
                 if (_manager.SelectIndex == 0) //TODO the unit manager being selected is far greater than index 0
