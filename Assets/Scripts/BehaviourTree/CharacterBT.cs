@@ -62,14 +62,28 @@ public class CharacterBT : Tree
                 {
                     new CheckTargetIsMine(manager),
                 }),
-                new CheckEnemyInAttackRange(manager),
-                new Timer(
-                    manager.Unit.Data.attackRate,
-                    new List<Node>()
-                    {
-                        new TaskAttack(manager)
-                    }
-                ),
+                new Selector(new List<Node> {
+                    new Sequence(new List<Node> {
+                        new CheckEnemyInAttackRange(manager),
+                        new Timer(
+                            manager.Unit.Data.attackRate,
+                            new List<Node>()
+                            {
+                                new TaskAttack(manager)
+                            }
+                        )
+                    }),
+                    new Sequence(new List<Node> {
+                        new CheckResourceInGatheringRange(manager),
+                        new Timer(
+                            manager.Unit.Data.attackRate,
+                            new List<Node>()
+                            {
+                                new TaskGather(manager)
+                            }
+                        )
+                    })
+                })
             });
 
             attackOrBuildSelector.Attach(attackSequence);

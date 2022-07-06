@@ -9,6 +9,7 @@ public class Globals
     //for raycasting phantom buildings
     public static int TERRAIN_LAYER_MASK = 1 << 6;
     public static int UNIT_MASK = 1 << 7;
+    public static int RESOURCE_MASK = 1 << 8;
     public static BuildingData[] BUILDING_DATA;
     public static ResourceData[] RESOURCE_DATA;
     public static NavMeshSurface NAV_MESH_SURFACE;
