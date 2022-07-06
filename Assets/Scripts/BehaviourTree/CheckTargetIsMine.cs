@@ -15,8 +15,13 @@ public class CheckTargetIsMine : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Checking if target is mine");
         object currentTarget = Parent.GetData("currentTarget");
+        HarvestResourceManager hrm = ((Transform)currentTarget).GetComponent<HarvestResourceManager>();
+        if (hrm != null)
+        {
+            _state = NodeState.FAILURE;
+            return _state;
+        }
         UnitManager um = ((Transform)currentTarget).GetComponent<UnitManager>();
         if (um == null)
         {
@@ -25,6 +30,8 @@ public class CheckTargetIsMine : Node
         }
         //_state = um.Unit.Owner == _myPlayerId ? NodeState.SUCCESS : NodeState.FAILURE;
         _state = um.Unit.Owner == _myUnitManager.Unit.Owner ? NodeState.SUCCESS : NodeState.FAILURE;
+        Debug.Log("target is mine state: " + _state);
+        Debug.Log("target identifier: " + um.Unit.Data.unitName);
         return _state;
     }
 }

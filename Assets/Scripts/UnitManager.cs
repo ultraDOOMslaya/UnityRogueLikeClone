@@ -205,6 +205,18 @@ public class UnitManager : MonoBehaviour
         um.TakeHit(Unit.Data.attackDamage);
     }
 
+    public void Gather(Transform target)
+    {
+        HarvestResourceManager hrm = target.GetComponent<HarvestResourceManager>();
+        if (hrm == null) return;
+
+        Vector3 deltaVec = target.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(deltaVec);
+        transform.rotation = rotation;
+
+        _animator.SetTrigger("Attack");
+    }
+
     public void TakeHit(int attackPoints)
     {
         Unit.HP -= attackPoints;

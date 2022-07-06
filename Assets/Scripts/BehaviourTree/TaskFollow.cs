@@ -31,12 +31,12 @@ public class TaskFollow : Node
         {
             // if target is not mine: clear the data
             // (else keep it for the TaskBuild node)
-            int targetOwner = ((Transform)currentTarget).GetComponent<UnitManager>().Unit.Owner;
-            if (targetOwner != GameManager.instance.gamePlayersParameters.myPlayerId)
-            {
-                ClearData("currentTarget");
-                ClearData("currentTargetOffset");
-            }
+            // int targetOwner = ((Transform)currentTarget).GetComponent<UnitManager>().Unit.Owner;
+            // if (targetOwner != GameManager.instance.gamePlayersParameters.myPlayerId)
+            // {
+            //     ClearData("currentTarget");
+            //     ClearData("currentTargetOffset");
+            // }
             _state = NodeState.SUCCESS;
             return _state;
         }
@@ -52,8 +52,8 @@ public class TaskFollow : Node
 
         //Vector3 p = _manager.transform.position;
         //Vector3 t = target.position - p;
-        Vector3 s = target.Find("Mesh").localScale;
-        float targetSize = Mathf.Max(s.x, s.z);
+        // Vector3 s = target.Find("Mesh").localScale;
+        // float targetSize = Mathf.Max(s.x, s.z);
 
         Vector3 p = _manager.transform.position;
 
@@ -61,8 +61,8 @@ public class TaskFollow : Node
         // we compute the movement vector
         Vector3 t = new Vector3(target.position.x + offset.x, target.position.y, target.position.z + offset.y) - p;
         // (add a little offset to avoid bad collisions)
-        float d = targetSize + _manager.Unit.Data.attackRange - 0.2f;
-        float r = d / t.magnitude;
+        // float d = targetSize + _manager.Unit.Data.attackRange - 0.2f;
+        // float r = d / t.magnitude;
         //return p + t * (1 - r);
         return target.position;
     }
