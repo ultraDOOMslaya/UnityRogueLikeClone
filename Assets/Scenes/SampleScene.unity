@@ -1898,6 +1898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBuilding: {fileID: 11400000, guid: 074c9a0e7d4d74240ac6d57eda4e5705, type: 2}
+  initialResource: {fileID: 11400000, guid: 9bd63d0cf74ddea43be30425360b313f, type: 2}
 --- !u!4 &822725823
 Transform:
   m_ObjectHideFlags: 0

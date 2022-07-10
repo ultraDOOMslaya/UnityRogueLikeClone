@@ -215,6 +215,8 @@ public class UnitManager : MonoBehaviour
         transform.rotation = rotation;
 
         _animator.SetTrigger("Attack");
+        hrm.YieldResource(Unit.Data.harvestRate);
+
     }
 
     public void TakeHit(int attackPoints)
