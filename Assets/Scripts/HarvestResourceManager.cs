@@ -10,7 +10,10 @@ public class HarvestResourceManager : MonoBehaviour
     public GameObject selectionCircle;
 
     private bool _hovered = false;
+<<<<<<< HEAD
     private bool _selected = false;
+=======
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
     private Transform _canvas;
     private GameObject _healthbar;
 
@@ -53,7 +56,10 @@ public class HarvestResourceManager : MonoBehaviour
         Globals.SELECTED_RESOURCES.Remove(this);
         Destroy(_healthbar);
         _healthbar = null;
+<<<<<<< HEAD
         _selected = false;
+=======
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
     }
 
     private void _SelectUtil()
@@ -74,9 +80,14 @@ public class HarvestResourceManager : MonoBehaviour
             );
             h.Initialize(transform, boundingBox.height);
             h.SetPosition();
+<<<<<<< HEAD
             _UpdateYieldbar();
         }
         _selected = true;
+=======
+            _UpdateHealthbar();
+        }
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
     }
 
     private static Bounds _GetBounds(Transform transform)
@@ -105,6 +116,7 @@ public class HarvestResourceManager : MonoBehaviour
         }
         return bounds;
     }
+<<<<<<< HEAD
 
     private void _Deplete()
     {
@@ -129,5 +141,14 @@ public class HarvestResourceManager : MonoBehaviour
 
     
 
+=======
+    private void _UpdateHealthbar()
+    {
+        if (!_healthbar) return;
+        Transform fill = _healthbar.transform.Find("Fill");
+        fill.GetComponent<UnityEngine.UI.Image>().fillAmount =  Resource.Yield / (float)Resource.Yield;
+    }
+
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
 }
 

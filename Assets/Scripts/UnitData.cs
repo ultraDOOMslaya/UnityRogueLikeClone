@@ -11,7 +11,11 @@ public class UnitData : ScriptableObject
     public float fieldOfView;
     public int attackDamage;
     public float attackRate;
+<<<<<<< HEAD
     public int harvestRate;
+=======
+    public int resourceYield;
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
     public GameObject prefab;
     public List<ResourceValue> cost;
     public List<SkillData> skills = new List<SkillData>();

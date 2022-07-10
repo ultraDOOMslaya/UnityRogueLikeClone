@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Terrain
+  - Unit
   layers:
   - Default
   - TransparentFX
@@ -11,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Terrain
+  - Unit
   - 
   - 
   - 
@@ -41,3 +44,61 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+=======
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+<<<<<<< HEAD
+  tags: []
+=======
+  tags:
+  - Terrain
+  - Unit
+  - Resource
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+<<<<<<< HEAD
+  - 
+  - 
+  - 
+=======
+  - Terrain
+  - Unit
+  - Resource
+>>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+>>>>>>> 3b479bafbfb585e7061779c4f31df8444c3b4c67
