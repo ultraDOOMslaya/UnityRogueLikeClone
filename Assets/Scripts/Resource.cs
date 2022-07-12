@@ -34,9 +34,6 @@ public class Resource
     {
         transform.position = position;
     }
-<<<<<<< HEAD
 
     public int MaxYield { get => _data.resourceYield; }
-=======
->>>>>>> 7d1c822f120fa7fa5d5fe7ca40d064292e7907f9
 }
