@@ -19,6 +19,7 @@ MonoBehaviour:
   fieldOfView: 22
   attackDamage: 2
   attackRate: 1
+  harvestRate: 4
   prefab: {fileID: 8901934994867957438, guid: 70a644de805f70b40a8d8af22f6c9e16, type: 3}
   cost: []
   skills: []
