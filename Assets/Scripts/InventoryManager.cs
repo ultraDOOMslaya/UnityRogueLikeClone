@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    private void Start()
+    void Awake()
     {
         instance = this;
     }
@@ -33,5 +33,9 @@ public class InventoryManager : MonoBehaviour
     public void Remove(ItemData item)
     {
         items.Remove(item);
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
 }
