@@ -126,7 +126,7 @@ public class HarvestResourceManager : MonoBehaviour
         Resource.Yield -= gatherRate;
         _UpdateYieldbar();
         if (Resource.Yield <= 0) _Deplete();
-        InventoryManager.instance.Add(itemdata);
+        InventoryManager.instance.Add(itemdata, gatherRate);
     }
 
 }

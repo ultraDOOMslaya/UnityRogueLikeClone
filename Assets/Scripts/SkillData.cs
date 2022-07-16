@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public enum SkillType
 {
     INSTANTIATE_CHARACTER,
-    INSTANTIATE_BUILDING
+    INSTANTIATE_BUILDING,
+    INSTANTIATE_ITEM,
 }
 
 [CreateAssetMenu(fileName = "Skill", menuName = "Scriptable Objects/Skill", order = 4)]
@@ -15,6 +17,7 @@ public class SkillData : ScriptableObject
     public string description;
     public SkillType type;
     public UnitData unitReference;
+    public List<ItemData> itemReference;
     public float castTime;
     public float cooldown;
     public Sprite sprite;
@@ -44,6 +47,11 @@ public class SkillData : ScriptableObject
                 {
                     BuildingPlacer.instance.SelectPlacedBuilding(
                         (BuildingData)unitReference);
+                }
+                break;
+            case SkillType.INSTANTIATE_ITEM:
+                {
+                    Debug.Log("Make an item!");
                 }
                 break;
             default:

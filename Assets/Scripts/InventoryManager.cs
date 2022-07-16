@@ -15,14 +15,24 @@ public class InventoryManager : MonoBehaviour
         instance = this;
     }
 
-    public bool Add(ItemData itemData)
+    public bool Add(ItemData itemData, int amount)
     {
         if (items.Count >= space)
         {
             Debug.Log("Inventory is full");
             return false;
         }
-        items.Add(itemData);
+
+        if (items.Exists(item => item.name == itemData.name))
+        {
+            items[items.FindIndex(item => item.name == itemData.name)].amount += amount;
+        }
+        else
+        {
+            itemData.amount = amount;
+            items.Add(itemData);
+        }
+        
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
