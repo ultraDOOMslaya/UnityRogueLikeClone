@@ -14,11 +14,15 @@ public class UIManager : MonoBehaviour
     public GameObject gameResourceCostPrefab;
     public GameObject selectedUnitMenu;
     public GameObject unitSkillButtonPrefab;
+    public GameObject craftingMenu;
+    public Transform craftingParent;
+    public GameObject craftingOptionPrefab;
 
     private Unit _selectedUnit;
     private BuildingPlacer _buildingPlacer;
     private Dictionary<string, Text> _resourceTexts;
     private Dictionary<string, Button> _buildingButtons;
+    private Dictionary<string, GameObject> _craftingOptions;
     private RectTransform _selectedUnitContentRectTransform;
     private RectTransform _selectedUnitButtonsRectTransform;
     private Text _selectedUnitTitleText;
@@ -61,6 +65,8 @@ public class UIManager : MonoBehaviour
         for (int i = 1; i <= 9; i++)
             ToggleSelectionGroupButton(i, false);
 
+
+
         Transform selectedUnitMenuTransform = selectedUnitMenu.transform;
         _selectedUnitContentRectTransform = selectedUnitMenuTransform.Find("Content").GetComponent<RectTransform>();
         _selectedUnitButtonsRectTransform = selectedUnitMenuTransform.Find("Buttons").GetComponent<RectTransform>();
@@ -87,6 +93,8 @@ public class UIManager : MonoBehaviour
         EventManager.AddListener("UnhoverBuildingButton", _OnUnhoverBuildingButton);
         EventManager.AddListener("SelectUnit", _OnSelectUnit);
         EventManager.AddListener("DeselectUnit", _OnDeselectUnit);
+        EventManager.AddListener("SelectBuilding", _OnSelectBuilding);
+        EventManager.AddListener("DeselectBuilding", _OnDeselectBuilding);
     }
 
     private void OnDisable()
@@ -97,6 +105,8 @@ public class UIManager : MonoBehaviour
         EventManager.RemoveListener("UnhoverBuildingButton", _OnUnhoverBuildingButton);
         EventManager.RemoveListener("SelectUnit", _OnSelectUnit);
         EventManager.RemoveListener("DeselectUnit", _OnDeselectUnit);
+        EventManager.RemoveListener("SelectBuilding", _OnSelectBuilding);
+        EventManager.RemoveListener("DeselectBuilding", _OnDeselectBuilding);
     }
 
     private void _OnUpdateResourceTexts()
@@ -129,6 +139,13 @@ public class UIManager : MonoBehaviour
         AddSelectedUnitToUIList(unit);
         _SetSelectedUnitMenu(unit);
         _ShowSelectedUnitMenu(true);
+
+        
+
+        if (unit.GetType() == typeof(Building))
+        {
+            _OnSelectBuilding(data);
+        }
     }
 
     private void _OnDeselectUnit(object data)
@@ -139,6 +156,22 @@ public class UIManager : MonoBehaviour
             _ShowSelectedUnitMenu(false);
         else
             _SetSelectedUnitMenu(Globals.SELECTED_UNITS[Globals.SELECTED_UNITS.Count - 1].Unit);
+
+        if (unit.GetType() == typeof(Building))
+        {
+            _OnDeselectBuilding();
+        }
+    }
+
+    private void _OnSelectBuilding(object data)
+    {
+        Building building = (Building)data;
+        _showSelectedBuildingMenu(building);
+    }
+
+    private void _OnDeselectBuilding()
+    {
+        _hideSelectedBuildingMenu();
     }
 
     private void _SetSelectedUnitMenu(Unit unit)
@@ -200,6 +233,33 @@ public class UIManager : MonoBehaviour
     private void _ShowSelectedUnitMenu(bool show)
     {
         selectedUnitMenu.SetActive(show);
+    }
+
+    private void _showSelectedBuildingMenu(Building building)
+    {
+        craftingMenu.SetActive(true);
+
+        _craftingOptions = new Dictionary<string, GameObject>();
+        for (int i = 0; i < building.Data.skills.Count; i++)
+        {
+            SkillData data = building.Data.skills[i];
+            GameObject craftingOption = Instantiate(craftingOptionPrefab);
+
+            craftingOption.transform.Find("CraftInfo").transform.Find("Text").GetComponent<Text>().text = data.name;
+            craftingOption.transform.Find("Icon").GetComponent<Image>().sprite = data.sprite;
+
+            craftingOption.transform.SetParent(craftingParent);
+        }
+    }
+
+    private void _hideSelectedBuildingMenu()
+    {
+        craftingMenu.SetActive(false);
+
+        foreach (Transform child in craftingParent)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 
     public void AddSelectedUnitToUIList(Unit unit)

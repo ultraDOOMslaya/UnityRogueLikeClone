@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Produce a simple viking.
   type: 0
   unitReference: {fileID: 11400000, guid: 6609876373cc33f448133094600bb5f3, type: 2}
+  itemReference: []
   castTime: 1
   cooldown: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 44c5c623f5a861e429a80d5d11abf698, type: 3}

@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3932e6caa066b64ebe0a96f1c5e6916, type: 3}
-  m_Name: Hovel
+  m_Name: ItemGenerator
   m_EditorClassIdentifier: 
-  code: hovel
-  unitName: Hovel
+  code: item_generator
+  unitName: Item Generator
   healthpoints: 100
   attackRange: 0
   fieldOfView: 0
   attackDamage: 0
   attackRate: 0
   harvestRate: 0
-  prefab: {fileID: 1701558036112885505, guid: 969c65365226d30439bb257120821e1c, type: 3}
+  prefab: {fileID: 8366510957542132080, guid: 585a81c101891fc4f9bdc097a21dc002, type: 3}
   cost: []
   skills:
-  - {fileID: 11400000, guid: 3dd3e0028e958fd42b50c45cc3c4a528, type: 2}
-  - {fileID: 11400000, guid: bf6d6a0b8c4921a4985f28513ac4d1d1, type: 2}
-  - {fileID: 11400000, guid: caa7277a3514746438cfc014675e4a9d, type: 2}
   - {fileID: 11400000, guid: 6c63642f88b06bf4b8e0ce8be8b86df9, type: 2}
